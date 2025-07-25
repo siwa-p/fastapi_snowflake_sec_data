@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, Query, HTTPException
 from sqlmodel import Session, select
-from src.database.connection import get_snowflake_connection, get_session
+from src.database.connection import get_session
 from typing import List, Optional
 from src.models.financial import SILVER_BALANCE_SHEET, SILVER_INCOME_STATEMENT, FinancialStatementResponse
 

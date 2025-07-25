@@ -17,22 +17,6 @@ SNOWFLAKE_DATABASE = os.getenv('SNOWFLAKE_DATABASE')
 SNOWFLAKE_SCHEMA = os.getenv('SNOWFLAKE_SCHEMA_BRONZE')
 SNOWFLAKE_ROLE = os.getenv('SNOWFLAKE_ROLE')
 
-def get_snowflake_connection():
-    try:
-        conn = snowflake.connector.connect(
-            user=SNOWFLAKE_USER,
-            password=SNOWFLAKE_PASSWORD,
-            account=SNOWFLAKE_ACCOUNT,
-            warehouse=SNOWFLAKE_WAREHOUSE,
-            database=SNOWFLAKE_DATABASE,
-            schema=SNOWFLAKE_SCHEMA,
-            role=SNOWFLAKE_ROLE
-        )
-        logger.info("Successfully connected to Snowflake.")
-        return conn
-    except Exception as e:
-        logger.error(f"Failed to connect to Snowflake: {e}")
-        raise e
 
 SNOWFLAKE_URL = os.getenv("SNOWFLAKE_CONNECTION_STRING")
 
